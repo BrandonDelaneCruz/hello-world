@@ -1,19 +1,30 @@
-﻿Console.WriteLine("Press to start.");
+﻿using System.Globalization;
 
-var userSaidStart = Console.ReadLine();
+bool keepLooping = true;
 
-var startTime = DateTime.Now;
+while (keepLooping)
+{
+    Console.WriteLine("Press to start.");
 
-Console.Clear();
+    var userSaidStart = Console.ReadLine();
 
-Console.WriteLine("Press to end.");
+    var startTime = DateTime.Now;
 
-var userSaidStop = Console.ReadLine();
+    Console.Clear();
 
-var endTime = DateTime.Now;
+    Console.WriteLine("Press to end.");
 
-var howLongDidHeWaitToPressTheButton = endTime - startTime;
+    var userSaidStop = Console.ReadLine();
 
-Console.Clear();
+    var endTime = DateTime.Now;
 
-Console.WriteLine(howLongDidHeWaitToPressTheButton);
+    var howLongDidHeWaitToPressTheButton = endTime - startTime;
+
+    Console.Clear();
+
+    Console.WriteLine($"Time Elapsed {howLongDidHeWaitToPressTheButton}. Press return to begin again.");
+
+    Console.ReadLine();
+
+    Console.Clear();
+}
