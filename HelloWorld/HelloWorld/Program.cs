@@ -24,7 +24,14 @@ while (keepLooping)
 
     Console.WriteLine($"Time Elapsed {howLongDidHeWaitToPressTheButton}. Press return to begin again.");
 
-    Console.ReadLine();
+    Console.WriteLine("If yes enter (y) if no enter (n).");
 
+    string userResponse = Console.ReadLine();
+
+    if (userResponse == "n")
+    {
+        keepLooping = false;
+    }
+    
     Console.Clear();
 }
