@@ -1,56 +1,44 @@
 ﻿using System.Globalization;
 
-bool keepLooping = true;
+bool isValidResponce = true;
+string userResponce = "";
+int str = 10;
+double multipler = str * .3;
+int longswordMultipler = Convert.ToInt32(multipler);
+int longSwordBaseDamage = 30 + longswordMultipler * 30;
 
-while (keepLooping)
-{
-    Console.WriteLine("Press to start.");
+Console.WriteLine("Choose a starting weapon:");
+Console.WriteLine("1: Longsword");
+Console.WriteLine();
+Console.Write("Selection: ");
 
-    var userSaidStart = Console.ReadLine();
-
-    var startTime = DateTime.Now;
-
-    Console.Clear();
-
-    Console.WriteLine("Press to end.");
-
-    var userSaidStop = Console.ReadLine();
-
-    var endTime = DateTime.Now;
-
-    var howLongDidHeWaitToPressTheButton = endTime - startTime;
-
-    #region Print values and confirm user wants to continue
-    Console.Clear();
-
-    Console.WriteLine($"Time Elapsed {howLongDidHeWaitToPressTheButton}. Press return to begin again.");
-
-    Console.WriteLine("If yes enter (y) if no enter (n).");
-    #endregion
-
-    string userResponse = "";
-
-    bool isResponseValid = false;
-    while (!isResponseValid)
+while (isValidResponce)
+{ 
+    userResponce = Console.ReadLine();
+   
+    if(userResponce == "1")
     {
-        userResponse = Console.ReadLine();
+
+        Console.Clear();
+        Console.WriteLine("Longsword base stats");
+        Console.WriteLine("Base dmamage: 30 + 30");
+        Console.WriteLine("Total Damage: 60");
+        Console.WriteLine();
+        Console.WriteLine($"Actual damage based on stats: {longSwordBaseDamage}");
+        Console.WriteLine();
+        Console.Write("(press enter to continue)");
+        userResponce = Console.ReadLine();
         
-        if (userResponse == "y" || userResponse == "n")
+        if(userResponce == "")
         {
-            isResponseValid = true;
+            isValidResponce = false;
         }
         else
         {
-            Console.WriteLine("Invalid response.Please enter a valid repsonse.");
+            Console.WriteLine();
+            Console.Write("(press enter to continue)");
+            Console.ReadLine();
         }
     }
-
-    // loop that keeps going until userResponse is valid
-
-    if (userResponse == "n")
-    {
-        keepLooping = false;
-    }
-
-    Console.Clear();
 }
+Console.Clear();
