@@ -26,12 +26,31 @@ while (keepLooping)
 
     Console.WriteLine("If yes enter (y) if no enter (n).");
 
-    string userResponse = Console.ReadLine();
+    string userResponse = "";
+
+    bool isResponseValid = false;
+    while (!isResponseValid)
+    {
+        userResponse = Console.ReadLine();
+        
+        if (userResponse == "y" || userResponse == "n")
+        {
+            isResponseValid = true;
+        }
+        else
+        {
+            Console.WriteLine("Invalid response.Please enter a valid repsonse.");
+        }
+    }
+
+    // loop that keeps going until userResponse is valid
 
     if (userResponse == "n")
     {
         keepLooping = false;
     }
-    
+
+    if (userResponse != "y" )
+
     Console.Clear();
 }
