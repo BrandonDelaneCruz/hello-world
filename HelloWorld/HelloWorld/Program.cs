@@ -20,11 +20,13 @@ while (keepLooping)
 
     var howLongDidHeWaitToPressTheButton = endTime - startTime;
 
+    #region Print values and confirm user wants to continue
     Console.Clear();
 
     Console.WriteLine($"Time Elapsed {howLongDidHeWaitToPressTheButton}. Press return to begin again.");
 
     Console.WriteLine("If yes enter (y) if no enter (n).");
+    #endregion
 
     string userResponse = "";
 
@@ -49,8 +51,6 @@ while (keepLooping)
     {
         keepLooping = false;
     }
-
-    if (userResponse != "y" )
 
     Console.Clear();
 }
