@@ -1,44 +1,30 @@
-﻿using System.Globalization;
+﻿
+using HelloWorld;
 
-bool isValidResponce = true;
-string userResponce = "";
-int str = 10;
-double multipler = str * .3;
-int longswordMultipler = Convert.ToInt32(multipler);
-int longSwordBaseDamage = 30 + longswordMultipler * 30;
 
-Console.WriteLine("Choose a starting weapon:");
-Console.WriteLine("1: Longsword");
+
+Console.Beep();
+Console.WriteLine("Select one:");
+Console.Beep();
 Console.WriteLine();
-Console.Write("Selection: ");
-
-while (isValidResponce)
-{ 
-    userResponce = Console.ReadLine();
-   
-    if(userResponce == "1")
-    {
-
-        Console.Clear();
-        Console.WriteLine("Longsword base stats");
-        Console.WriteLine("Base dmamage: 30 + 30");
-        Console.WriteLine("Total Damage: 60");
-        Console.WriteLine();
-        Console.WriteLine($"Actual damage based on stats: {longSwordBaseDamage}");
-        Console.WriteLine();
-        Console.Write("(press enter to continue)");
-        userResponce = Console.ReadLine();
-        
-        if(userResponce == "")
-        {
-            isValidResponce = false;
-        }
-        else
-        {
-            Console.WriteLine();
-            Console.Write("(press enter to continue)");
-            Console.ReadLine();
-        }
-    }
-}
+Console.Beep();
+Console.WriteLine("1: Movie reference");
+Console.Beep();
+Console.WriteLine("2: Tea");
+string userResponse = Console.ReadLine();
 Console.Clear();
+
+
+Console.WriteLine();
+string userType = FunctionTest.AddValues(userResponse);
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine(userType);
+Console.ReadLine();
+
+//int firstNumber = int.Parse(Console.ReadLine());
+//int secondNumber = int.Parse(Console.ReadLine());
+
+//int sum = FunctionTest.SumNumbers(firstNumber, secondNumber);
+
+//Console.WriteLine($"The sum is {sum}");
